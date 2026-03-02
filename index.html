@@ -1028,7 +1028,6 @@ h4 { font-size: 1.15em; }
 
   /* Hero — fix heading line breaks, spacing, and scroll overlap */
   .hero-content { padding: 100px 0 40px; }
-  .hero h1 br { display: none; }
   .hero h1 { font-size: clamp(1.8rem, 7vw, 2.8rem); }
   .hero .lead { font-size: 0.95em; margin-bottom: 32px; }
   .hero-tagline { font-size: 1.1em; margin-bottom: 20px; }
@@ -1037,10 +1036,11 @@ h4 { font-size: 1.15em; }
   .hero-btns { flex-direction: column; gap: 12px; }
   .hero-btns .btn { width: 100%; text-align: center; justify-content: center; padding: 16px 24px; }
 
-  /* Stats bar — tighter on mobile */
-  .hero-metrics { flex-wrap: wrap; gap: 20px; padding: 20px 16px; margin-top: 32px; }
-  .hero-metric-val { font-size: 1.3em; }
-  .hero-metric-label { font-size: 0.75em; }
+  /* Stats bar — 3-column grid on mobile */
+  .hero-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 20px 16px; margin-top: 32px; }
+  .hero-metric { flex-direction: column; align-items: center; text-align: center; gap: 4px; }
+  .hero-metric-val { font-size: 1.2em; }
+  .hero-metric-label { font-size: 0.68em; }
 
   /* Hide scroll indicator on mobile — it overlaps the metrics */
   .hero-scroll { display: none; }
@@ -1060,7 +1060,7 @@ h4 { font-size: 1.15em; }
   .split { grid-template-columns: 1fr; }
   .split-media { min-height: 300px; }
   .contact-split { grid-template-columns: 1fr; gap: 48px; }
-  .detail-grid { grid-template-columns: 1fr; }
+  .detail-grid { grid-template-columns: 1fr; gap: 32px; }
   .form-row { grid-template-columns: 1fr; }
   .insights-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -1071,11 +1071,34 @@ h4 { font-size: 1.15em; }
   .calc-capture { flex-direction: column; gap: 0; }
   .calc-capture input { border-right: 1px solid rgba(255,255,255,0.1); }
   .fees-grid { grid-template-columns: 1fr; }
+
+  /* Split stats (About page) — keep readable on mobile */
+  .split-stats { gap: 24px; flex-wrap: wrap; justify-content: flex-start; }
+
+  /* Fee cards — tighter padding */
+  .fee-card { padding: 24px; }
+  .fee-card-price { font-size: 1.1em; }
+
+  /* Sidebar cards — tighter padding */
+  .sidebar-card { padding: 24px; }
+
+  /* Trust badges — tighter on mobile */
+  .trust-inner { gap: 16px; }
+  .trust-badge { font-size: 0.68em; }
+
+  /* Testimonial — slightly smaller text */
+  .testimonial-text { font-size: 1.1em; }
+
+  /* Case study — mobile */
   .case-study-hero { height: 45vh; min-height: 300px; }
-  .case-study-gallery { grid-template-columns: 1fr; }
-  .case-study-stats { grid-template-columns: repeat(2, 1fr); }
+  .case-study-hero-content { padding: 0 24px; }
   .case-study-hero-content h1 { font-size: 1.6rem; }
   .case-study-hero-content .case-study-meta { gap: 12px; font-size: 0.8rem; }
+  .case-study-body { padding: 32px 0; }
+  .case-study-gallery { grid-template-columns: 1fr; }
+  .case-study-stats { grid-template-columns: repeat(2, 1fr); gap: 16px; padding: 24px 20px; margin: 32px 0; }
+  .case-study-stat-val { font-size: 1.4rem; }
+  .case-study-stat-label { font-size: 0.7rem; }
 
   /* CTA banner section */
   .cta-section h2 { font-size: clamp(1.4rem, 5vw, 2rem); }
@@ -1137,7 +1160,7 @@ h4 { font-size: 1.15em; }
   <div class="container">
     <div class="hero-content">
       <span class="eyebrow">Architectural Design &middot; Kent</span>
-      <h1>We design ambitious<br>buildings. <em>Then we make<br>sure they get built.</em></h1>
+      <h1>We design ambitious buildings. <em>Then we make sure they get built.</em></h1>
       <div class="hero-tagline">Designed to be built.</div>
       <p class="lead">New-build homes, barn conversions, residential developments, and commercial projects across Kent. Fifteen years of turning complex briefs into buildings that stand the test of time.</p>
       <div class="hero-btns">
@@ -1504,7 +1527,7 @@ h4 { font-size: 1.15em; }
   </div>
   <div class="split">
     <!-- IMAGE: images/aerial-property.jpg — Placeholder until team photo is shot -->
-    <div class="split-media" style="background:linear-gradient(135deg, rgba(17,17,17,0.2), rgba(26,26,26,0.1)), url('images/aerial-property.jpg') center/cover no-repeat, linear-gradient(135deg, #1a1612 0%, #2c2218 50%, #3d2f1f 100%);">
+    <div class="split-media" style="background-image: linear-gradient(135deg, rgba(17,17,17,0.15), rgba(26,26,26,0.05)), url('images/aerial-property.jpg'); background-position: center; background-size: cover; background-repeat: no-repeat; background-color: #1a1612;">
     </div>
     <div class="split-text">
       <span class="eyebrow">Our story</span>
